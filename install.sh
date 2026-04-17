@@ -9,7 +9,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Default repository URL (can be overridden with REPO_URL env variable)
-REPO_URL=${REPO_URL:-"https://raw.githubusercontent.com/qiranli0823/proxy_tools/main"}
+REPO_URL=${REPO_URL:-"https://raw.githubusercontent.com/qiranli0823/proxyctl/main"}
 SCRIPT_URL="$REPO_URL/proxyctl.sh"
 
 # Installation path
