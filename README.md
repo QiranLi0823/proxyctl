@@ -19,10 +19,10 @@ A lightweight bash script for managing proxy settings in your terminal environme
 
 ```bash
 # Install locally (recommended)
-curl -sSL https://raw.githubusercontent.com/qiranli0823/proxyctl/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/qiranli0823/proxyctl/master/install.sh | bash
 
 # Uninstall
-curl -sSL https://raw.githubusercontent.com/qiranli0823/proxyctl/main/install.sh | bash -s -- --uninstall
+curl -sSL https://raw.githubusercontent.com/qiranli0823/proxyctl/master/install.sh | bash -s -- --uninstall
 ```
 
 **Note**: Replace `qiranli0823` with your GitHub username if you've forked this repository.
