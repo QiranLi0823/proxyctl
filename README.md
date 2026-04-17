@@ -1,9 +1,13 @@
 # Proxyctl
 
+<div align="center">
+
 [![Bash](https://img.shields.io/badge/Bash-5.0+-blue.svg)](https://www.gnu.org/software/bash/)
 [![Shell](https://img.shields.io/badge/Shell-POSIX-green.svg)](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 [![Platform](https://img.shields.io/badge/Platform-Linux-lightgrey.svg)](https://www.linux.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+</div>
 
 A lightweight bash script for managing proxy settings in your terminal environment. Easily toggle HTTP/HTTPS/SOCKS5 proxies with automatic connection testing and configuration persistence.
 
