@@ -1,10 +1,28 @@
-# Proxy Tool
+# Proxyctl
+
+[![Bash](https://img.shields.io/badge/Bash-5.0+-blue.svg)](https://www.gnu.org/software/bash/)
+[![Shell](https://img.shields.io/badge/Shell-POSIX-green.svg)](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
+[![Platform](https://img.shields.io/badge/Platform-Linux-lightgrey.svg)](https://www.linux.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A lightweight bash script for managing proxy settings in your terminal environment. Easily toggle HTTP/HTTPS/SOCKS5 proxies with automatic connection testing and configuration persistence.
 
 ## Overview
 
-`proxy_tool.sh` (alias `px`) is a simple command-line utility that allows you to quickly enable and disable proxy settings for your shell session. It automatically tests connectivity, saves successful proxy configurations, and provides intuitive commands for managing your proxy environment.
+`proxyctl.sh` (alias `px`) is a simple command-line utility that allows you to quickly enable and disable proxy settings for your shell session. It automatically tests connectivity, saves successful proxy configurations, and provides intuitive commands for managing your proxy environment.
+
+## Quick Install
+
+```bash
+# Install locally (recommended)
+curl -sSL https://raw.githubusercontent.com/qiranli0823/proxy_tools/main/install.sh | bash
+
+# Uninstall
+curl -sSL https://raw.githubusercontent.com/qiranli0823/proxy_tools/main/install.sh | bash -s -- --uninstall
+```
+
+**Note**: Replace `qiranli0823` with your GitHub username if you've forked this repository.
+
 
 ## Features
 
@@ -16,41 +34,6 @@ A lightweight bash script for managing proxy settings in your terminal environme
 - **Persistent default**: Stores your preferred proxy in `~/.proxy_config`
 - **Fallback default**: Uses `127.0.0.1:7890` if no configuration exists
 
-## Installation
-
-### Option 1: Direct usage
-Simply download the script and make it executable:
-```bash
-curl -O https://raw.githubusercontent.com/yourusername/proxy_tools/main/proxy_tool.sh
-chmod +x proxy_tool.sh
-```
-
-### Option 2: System-wide installation
-```bash
-# Copy to a directory in your PATH
-sudo cp proxy_tool.sh /usr/local/bin/px
-sudo chmod +x /usr/local/bin/px
-```
-
-### Option 3: User-local installation
-```bash
-# Add to your ~/bin directory
-mkdir -p ~/bin
-cp proxy_tool.sh ~/bin/px
-chmod +x ~/bin/px
-
-# Ensure ~/bin is in your PATH (add to ~/.bashrc or ~/.zshrc)
-echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-```
-
-### Option 4: Alias setup (recommended)
-Add an alias to your shell configuration file (`~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`):
-```bash
-alias px='source /path/to/proxy_tool.sh'
-```
-
-**Note**: Using `source` is important because the script modifies environment variables that need to persist in your current shell session.
 
 ## Usage
 
@@ -137,66 +120,7 @@ These variables are recognized by many command-line tools including `curl`, `wge
 The script tests connectivity by attempting to reach `https://www.google.com` through the proxy with a 10-second timeout. If successful, the proxy address is saved; if not, an error message is displayed.
 
 ### Persistence mechanism
-The script uses `source` (or `.`) to execute in the current shell context, allowing environment variable changes to persist. This is why the alias setup uses `source /path/to/proxy_tool.sh`.
-
-## Troubleshooting
-
-### "Command not found" error
-Ensure the script is executable and in your PATH, or use the full path:
-```bash
-/path/to/proxy_tool.sh on
-```
-
-### Proxy changes don't persist in shell
-Make sure you're using `source` or `.` to execute the script:
-```bash
-source /path/to/proxy_tool.sh on
-```
-
-Or set up the alias as recommended in the Installation section.
-
-### Connection test fails
-1. Verify your proxy server is running and accessible
-2. Check if the proxy address and port are correct
-3. Ensure you have network connectivity to the proxy server
-4. Some networks may block access to Google - the script will still save the proxy if you manually verify it works
-
-### Environment variables not recognized
-Some applications may use different environment variable names. Common alternatives include:
-- `HTTP_PROXY` and `HTTPS_PROXY` (uppercase)
-- `ALL_PROXY` (uppercase)
-
-You can manually set these if needed:
-```bash
-export HTTP_PROXY="$http_proxy"
-export HTTPS_PROXY="$https_proxy"
-export ALL_PROXY="$all_proxy"
-```
-
-## Compatibility
-
-### Supported shells
-- Bash
-- Zsh
-- Other POSIX-compliant shells
-
-### Tested tools
-The proxy variables work with:
-- `curl`, `wget`
-- `git`
-- `apt`, `apt-get` (via `Acquire::http::Proxy` configuration)
-- `npm`, `pip`, `gem` (varies by tool)
-- Many other command-line utilities
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+The script uses `source` (or `.`) to execute in the current shell context, allowing environment variable changes to persist. This is why the alias setup uses `source /path/to/proxyctl.sh`.
 
 ## License
 
