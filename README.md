@@ -1,4 +1,4 @@
-<h1 align="center">Proxyctl</h1>
+<h1 align="center">Proxyctl-cli</h1>
 
 <div align="center">
 
